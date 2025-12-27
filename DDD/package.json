@@ -1,0 +1,9 @@
+{
+  "name": "ddd-practice",
+  "version": "1.0.0",
+  "description": "DDD 실습",
+  "main": "example.js",
+  "scripts": {
+    "start": "node example.js"
+  }
+}

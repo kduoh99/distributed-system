@@ -1,0 +1,19 @@
+{
+  "name": "modular-monolith-demo",
+  "version": "1.0.0",
+  "description": "Modular Monolith 실습 예제",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": ["modular-monolith", "architecture"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

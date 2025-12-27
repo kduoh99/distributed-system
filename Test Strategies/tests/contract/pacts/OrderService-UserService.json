@@ -1,0 +1,79 @@
+{
+  "consumer": {
+    "name": "OrderService"
+  },
+  "interactions": [
+    {
+      "description": "a request for nonexistent user",
+      "providerState": "nonexistent@example.com does not exist",
+      "request": {
+        "method": "GET",
+        "path": "/api/users/nonexistent@example.com"
+      },
+      "response": {
+        "body": {
+          "error": "User not found"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 404
+      }
+    },
+    {
+      "description": "a request for user1@example.com",
+      "providerState": "user1@example.com exists and is VIP",
+      "request": {
+        "method": "GET",
+        "path": "/api/users/user1@example.com"
+      },
+      "response": {
+        "body": {
+          "email": "user1@example.com",
+          "id": "user1",
+          "name": "Alice",
+          "vip": true
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request for user2@example.com",
+      "providerState": "user2@example.com exists and is not VIP",
+      "request": {
+        "method": "GET",
+        "path": "/api/users/user2@example.com"
+      },
+      "response": {
+        "body": {
+          "email": "user2@example.com",
+          "id": "user2",
+          "name": "Bob",
+          "vip": true
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "12.5.2"
+    },
+    "pactRust": {
+      "ffi": "0.4.20",
+      "models": "1.2.0"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "UserService"
+  }
+}
